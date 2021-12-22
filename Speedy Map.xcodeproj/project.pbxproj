@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A24AD55A2772473700ED0398 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24AD5592772473600ED0398 /* LocationViewModel.swift */; };
 		A2D2C43926C15E9E004A04CC /* Speedy_MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D2C43826C15E9E004A04CC /* Speedy_MapApp.swift */; };
 		A2D2C43B26C15E9E004A04CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D2C43A26C15E9E004A04CC /* ContentView.swift */; };
 		A2D2C43D26C15E9F004A04CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D2C43C26C15E9F004A04CC /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A24AD5592772473600ED0398 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		A2D2C43526C15E9E004A04CC /* Speedy Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speedy Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D2C43826C15E9E004A04CC /* Speedy_MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speedy_MapApp.swift; sourceTree = "<group>"; };
 		A2D2C43A26C15E9E004A04CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				A2D2C43826C15E9E004A04CC /* Speedy_MapApp.swift */,
 				A2D2C43A26C15E9E004A04CC /* ContentView.swift */,
+				A24AD5592772473600ED0398 /* LocationViewModel.swift */,
 				A2D2C43C26C15E9F004A04CC /* Assets.xcassets */,
 				A2D2C44126C15E9F004A04CC /* Info.plist */,
 				A2D2C43E26C15E9F004A04CC /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D2C43B26C15E9E004A04CC /* ContentView.swift in Sources */,
+				A24AD55A2772473700ED0398 /* LocationViewModel.swift in Sources */,
 				A2D2C43926C15E9E004A04CC /* Speedy_MapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
