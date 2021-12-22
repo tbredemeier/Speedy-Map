@@ -33,6 +33,7 @@ struct ContentView: View {
                 Toggle(isOn: $locationManager.autoCenterCurrentLocation) {
                     Text("Auto Center")
                         .frame(maxWidth: .infinity, alignment: .trailing)
+                        .foregroundColor(.white)
                 }
             }
             .onAppear {
