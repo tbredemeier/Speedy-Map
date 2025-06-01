@@ -11,10 +11,35 @@ import MapKit
 struct ContentView: View {
     @State private var startPosition = MapCameraPosition.userLocation(fallback: .automatic)
     @State private var mapRegion = MKCoordinateRegion()
-    @State private var locationManager = LocationManager()
+    @StateObject private var locationManager = LocationManager()
     var body: some View {
-        Map(position: $startPosition) {
-            UserAnnotation()
+        ZStack(alignment: .bottomTrailing) {
+            Map(position: $startPosition) {
+                UserAnnotation()
+            }
+            .mapStyle(.hybrid(elevation: .realistic))
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text(locationManager.cityStateText)
+                    .font(.headline)
+                    .padding(.top, 50)
+                Text("Speed: \(String(format: "%.1f", locationManager.speed)) mph")
+                    .font(.subheadline)
+                Spacer()
+                Toggle(isOn: $locationManager.mapInteractionEnabled) {
+                    Text("Free Map")
+                }
+            }
+//            .padding()
+//            .background(.ultraThinMaterial)
+//            .cornerRadius(10)
+//            .padding()
+//            .frame(maxWidth: .infinity, alignment: .topLeading)
+//            .padding()
+//            .background(.ultraThinMaterial)
+//            .cornerRadius(10)
+//            .padding(.trailing)
+//            .padding(.bottom)
         }
     }
 }
