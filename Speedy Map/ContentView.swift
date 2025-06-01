@@ -19,27 +19,22 @@ struct ContentView: View {
             }
             .mapStyle(.hybrid(elevation: .realistic))
             
-            VStack(alignment: .leading, spacing: 8) {
-                Text(locationManager.cityStateText)
+            VStack(alignment: .center) {
+                let description = locationManager.cityStateText + "\n" + "\(locationManager.speed) mph"
+                Text(description)
                     .font(.headline)
-                    .padding(.top, 50)
-                Text("Speed: \(String(format: "%.1f", locationManager.speed)) mph")
-                    .font(.subheadline)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial)
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(10)
+                    .padding()
                 Spacer()
-                Toggle(isOn: $locationManager.mapInteractionEnabled) {
-                    Text("Free Map")
-                }
+                Toggle("Auto Center", isOn: $locationManager.mapInteractionEnabled)
+                    .toggleStyle(.button)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(10)
+                    .padding()
             }
-//            .padding()
-//            .background(.ultraThinMaterial)
-//            .cornerRadius(10)
-//            .padding()
-//            .frame(maxWidth: .infinity, alignment: .topLeading)
-//            .padding()
-//            .background(.ultraThinMaterial)
-//            .cornerRadius(10)
-//            .padding(.trailing)
-//            .padding(.bottom)
         }
     }
 }

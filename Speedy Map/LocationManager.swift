@@ -15,7 +15,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     @Published var userLocation = CLLocationCoordinate2D()
     @Published var region = MKCoordinateRegion()
-    @Published var speed: Double = 0.0
+    @Published var speed = 0
     @Published var cityStateText: String = "Locating..."
     @Published var mapInteractionEnabled: Bool = false
 
@@ -30,7 +30,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latest = locations.last else { return }
         userLocation = latest.coordinate
-        speed = max(latest.speed * 2.23694, 0) // m/s to mph, no negative
+        speed = Int(max(latest.speed * 2.23694 + 0.5, 0)) // m/s to mph, no negative
 
         if !mapInteractionEnabled {
             centerMap()
