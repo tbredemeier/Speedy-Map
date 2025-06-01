@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    @State private var startPosition = MapCameraPosition.userLocation(fallback: .automatic)
+    @State private var mapRegion = MKCoordinateRegion()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Map(position: $startPosition) {
+            UserAnnotation()
         }
-        .padding()
     }
 }
 
