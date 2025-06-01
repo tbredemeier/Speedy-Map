@@ -11,6 +11,7 @@ import MapKit
 struct ContentView: View {
     @State private var startPosition = MapCameraPosition.userLocation(fallback: .automatic)
     @State private var mapRegion = MKCoordinateRegion()
+    @State private var locationManager = LocationManager()
     var body: some View {
         Map(position: $startPosition) {
             UserAnnotation()
