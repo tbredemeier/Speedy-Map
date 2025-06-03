@@ -17,7 +17,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var region = MKCoordinateRegion()
     @Published var speed = 0
     @Published var cityStateText: String = "Locating..."
-    @Published var mapInteractionEnabled: Bool = false
+    
 
     override init() {
         super.init()
@@ -31,10 +31,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
         guard let latest = locations.last else { return }
         userLocation = latest.coordinate
         speed = Int(max(latest.speed * 2.23694 + 0.5, 0)) // m/s to mph, no negative
-
-        if !mapInteractionEnabled {
-            centerMap()
-        }
         
         geocoder.reverseGeocodeLocation(latest) { placemarks, _ in
             if let placemark = placemarks?.first {
